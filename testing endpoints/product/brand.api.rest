@@ -1,0 +1,19 @@
+### POST BRAND
+POST http://localhost:3000/product/brand
+Content-Type: application/json
+
+{
+    "_name": "Adidas"
+}
+
+### GET BRANDS BY HEADQUARTER
+GET http://localhost:3000/product/brand/headquarter/6129c85483df9e42f027015a
+
+### GET BRANDS
+GET http://localhost:3000/product/brand
+
+
+<<<<<   DATA TESTING   >>>>>    
+    "_name": "Janis"
+    "_name": "Otto"
+    "_name": "Adidas"

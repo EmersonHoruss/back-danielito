@@ -1,0 +1,22 @@
+### POST CATEGORIES
+POST http://localhost:3000/product/category
+Content-Type: application/json
+
+{
+    "_name": "Buso"
+}
+
+### GET CATEGORIES BY HEADQUARTER
+GET http://localhost:3000/product/category/headquarter/6129c85483df9e42f027015a
+
+
+### GET CATEGORIES
+GET http://localhost:3000/product/category
+
+<<<<<   DATA TESTING   >>>>> 
+    "_name": "Polo manga corta"
+    "_name": "Polo manga larga"
+    "_name": "Polo manga cero"
+    "_name": "Pantalon"
+    "_name": "Camisa"
+    "_name": "Buso"

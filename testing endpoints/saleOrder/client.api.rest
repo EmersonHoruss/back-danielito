@@ -1,0 +1,36 @@
+### POST CLIENT
+POST http://localhost:3000/saleOrder/client
+Content-Type: application/json
+
+{
+    "_DNI": "72058249",
+    "_name": "David Emerson Perales Villanueva Jose Antonio 1",
+    "_cel": "942696026",
+    "_address": "Lambayeque, La Victoria, Los Nogales MZ z Lote M ",
+    "_RUC": "20530165702"
+}
+
+### PUT CLIENT
+PUT http://localhost:3000/saleOrder/client/612827d1e690e251c838747b
+Content-Type: application/json
+
+{
+    "_DNI": "72058247",
+    "_name": "Julio Cesar Antonio",
+    "_cel": "942696026",
+    "_address": "Los Nogales",
+    "_RUC": "20530165702"
+}
+
+### READ BY NAME AND DNI
+GET http://localhost:3000/saleOrder/client/readByNameDNI/j/null
+
+### GET CLIENTS
+GET http://localhost:3000/saleOrder/client
+
+<<<<<   DATA TESTING   >>>>>
+    "_DNI": "72058247",
+    "_name": "Julio Cesar"
+    
+    "_DNI": "72058248",
+    "_name": "Julio Antonio"

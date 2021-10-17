@@ -1,0 +1,42 @@
+### POST ESTART_SALE_ORDER
+POST http://localhost:3000/saleOrder/saleOrder
+Content-Type: application/json
+
+{
+}
+
+### DELETE ONE SALE ORDER
+### DELETE http://localhost:3000/saleOrder/saleOrder/deleteOne/_idSaleOrder
+DELETE http://localhost:3000/saleOrder/saleOrder/deleteOne/614a5abb7ba42225c4ef9281
+
+### PUT TAKE_SALE_ORDER
+PUT  http://localhost:3000/saleOrder/saleOrder/take
+Content-Type: application/json
+
+{
+    "_id": "6128af108084fc1a80a4ffb7",
+    "_idClient": "61249718145286317ca1632a",
+    "_idSeller": "6127315d92f54b32dc73b20f"
+}
+
+### GET NON_PAID_SALE_ORDERS
+GET http://localhost:3000/saleOrder/saleOrder/nonPaid
+
+### PUT COLLECT_SALE_ORDER
+PUT  http://localhost:3000/saleOrder/saleOrder/collect
+Content-Type: application/json
+
+{
+    "_id": "6128b03ebad9ba3c1883c118",
+    "_idDebtCollector": "6127315d92f54b32dc73b20f"
+}
+
+### GET PAID_SAIL_ORDERS
+GET http://localhost:3000/saleOrder/saleOrder/paid
+
+### GET SAIL_ORDERS
+GET http://localhost:3000/saleOrder/saleOrder
+
+### GET SAIL_ORDERS
+#GET http://localhost:3000/saleOrder/saleOrder/readById/:_idSaleOrder
+GET http://localhost:3000/saleOrder/saleOrder/readById/6147f02075130212ac4800be

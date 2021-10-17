@@ -1,0 +1,33 @@
+### POST PRODUCT_HEADQUARTER
+POST http://localhost:3000/headquarter/productHeadquarter
+Content-Type: application/json
+
+{
+    "_stock":10,
+    "_idHeadquarter":"614e0bc7c34eda1f44272b3a",
+    "_idProduct":"614e30353b93673c24076d64"
+}
+
+### PUT PRODUCT_HEADQUARTER BY ID PRODUCT HEADQUARTER
+PUT http://localhost:3000/headquarter/productHeadquarter/updateById/6129c88f7514310114e4d105
+Content-Type: application/json
+
+{
+    "_stock":6
+}
+
+### GET PRODUCTS_HEADQUARTER BY BRAND, CATEGORY AND SIZE
+### http://localhost:3000/headquarter/productHeadquarter/readByBrandCategorySize/:_idHeadquarter/:_idBrand/:_idCategory/:_idSize
+GET http://localhost:3000/headquarter/productHeadquarter/readByBrandCategorySize/614e0bc7c34eda1f44272b3a/614e021ec34eda1f44272aee/614e0293c34eda1f44272af4/614e0332c34eda1f44272b02
+
+### GET PRODUCTS_HEADQUARTER
+GET http://localhost:3000/headquarter/productHeadquarter
+
+### GET FULL PRODUCTS HEADQUARTER
+GET http://localhost:3000/headquarter/productHeadquarter/full/6129c85483df9e42f027015a
+
+
+<<<<<   DATA TESTING   >>>>>
+    "_stock":2,
+    "_idHeadquarter":"612549559619d14e5459f229",
+    "_idProduct":"612548739619d14e5459f211"

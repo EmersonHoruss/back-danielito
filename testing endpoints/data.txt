@@ -1,0 +1,20 @@
+*****   PRODUCT    *****
+BRAND                       ►   612492c89b8d8537685b4b45
+CATEGORY                    ►   612492eb9b8d8537685b4b48
+SIZE                        ►   6124932b9b8d8537685b4b50
+PRODUCT                     ►   612493039b8d8537685b4b4b
+
+*****   WORKER    *****
+WORKER AS SELLER            ►   61249d36145286317ca16331
+WORKER AS DEBT_COLLECTOR    ►   6124948b6e98dc5724d34d92
+
+*****   HEADQUARTER    *****
+HEADQUARTER                 ►   612461c401bf1c4460bc6c0c
+PRODUCT_HEADQUARTER         ►   612493709b8d8537685b4b52
+
+*****   SALE_ORDER    *****
+CLIENT                      ►   61249718145286317ca1632a
+DETAIL_SALE_ORDER           ►   61249e6c145286317ca16334
+SALE_ORDER                  ►   61252606ca64d0458cec3577
+
+DELETE THIS ITEM: 612496a86e98dc5724d34d95

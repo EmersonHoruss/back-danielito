@@ -1,0 +1,47 @@
+### POST PRICE
+POST http://localhost:3000/price/price
+Content-Type: application/json
+
+{
+    "_amount" : 16,
+    "_idKindPrice":"614e01dcc34eda1f44272aec",
+    "_idProduct":"614e06e3c34eda1f44272b21"
+}
+
+### PUT PRICE BY ID PRODUCT AND ID KIND PRICE
+### http://localhost:3000/price/price/updateById/:_idPrice
+PUT http://localhost:3000/price/price/udpateById/
+Content-Type: application/json
+
+{
+    "_amount":6
+}
+
+### GET FULL PRICES BY _IDPRODUCT
+### http://localhost:3000/price/price/readFullPricesByIdProduct/:_idProduct
+GET http://localhost:3000/price/price/readFullPricesByIdProduct/61274514be557958acee78a2
+
+### GET PRICE
+GET http://localhost:3000/price/price
+
+
+
+<<<<<   DATA TESTING   >>>>>
+    <   KindPrice = menor  >
+    "_amount" : 20,
+    "_idKindPrice":"",
+    "_idProduct":""
+
+    <   KindPrice = mayor  >
+    "_amount" : 18,
+    "_idKindPrice":"",
+    "_idProduct":""
+
+    <   KindPrice = priviligiado  >
+    <   priviligiado no se basa en ninguno
+    de los tipso de precios definidos por un
+    liminte inferior y superior, no importa 
+    la cantidad, aplica cualquier cantidad  >
+    "_amount" : 18,
+    "_idKindPrice":"",
+    "_idProduct":""

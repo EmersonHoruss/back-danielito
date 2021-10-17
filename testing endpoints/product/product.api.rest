@@ -1,0 +1,43 @@
+### POST PRODUCT
+POST http://localhost:3000/product/product
+Content-Type: application/json
+
+{
+    "_stock":12,
+    "_manufactured":false,
+    "_idBrand":"614e021ec34eda1f44272aee",
+    "_idCategory":"614e02a7c34eda1f44272afa",
+    "_idSize":"614e0337c34eda1f44272b04"
+}
+
+### POST PRODUCT WITH NO ID
+POST http://localhost:3000/product/product/createWithNoId
+Content-Type: application/json
+
+{
+    "_stock":10,
+    "_manufactured":false,
+    "_brand":"Otto",
+    "_category":"Polo manga corta",
+    "_size":"AAAAA",
+    "_price": 10
+}
+
+### GET PRODUCTS
+GET http://localhost:3000/product/product
+
+### GET FULL PRODUCTS BY ID PRODUCT XXXXXXXX NOT YET IMPLEMENTED
+GET http://localhost:3000/product/product/full/
+
+### GET FULL PRODUCTS 
+GET http://localhost:3000/product/product/full
+
+<<<<<   DATA TESTING   >>>>> 
+    "_stock":6,
+    "_manufactured":false,
+
+    "_stock":3,
+    "_manufactured":false,
+
+    "_stock":12,
+    "_manufactured":false,

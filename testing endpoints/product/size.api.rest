@@ -1,0 +1,21 @@
+### POST SIZE
+POST http://localhost:3000/product/size
+Content-Type: application/json
+
+{
+    "_name": "XL"
+}
+
+### GET SIZES BY HEADQUARTER
+GET http://localhost:3000/product/size/headquarter/6129c85483df9e42f027015a
+
+### GET SIZES
+GET http://localhost:3000/product/size
+
+<<<<<   DATA TESTING   >>>>>
+    "_name": "2"
+    "_name": "4"
+    "_name": "14"
+    "_name": "16"
+    "_name": "S"
+    "_name": "XL"

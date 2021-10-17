@@ -1,0 +1,33 @@
+### POST WORKER
+POST http://localhost:3000/worker/worker
+Content-Type: application/json
+
+{
+    "_DNI": "05824774",
+    "_id": "612827d1e690e251c838747b",
+    "_name": "Alezzza",
+    "_age": 20,
+    "_address": "Las Ñustas #340 segundo piso",
+    "_cel": "993298170",
+    "_debtCollector": true
+}
+
+### GET WORKER
+GET http://localhost:3000/worker/worker
+
+
+
+<<<<<   DATA TESTING   >>>>>
+    "_DNI": "05824772",
+    "_name": "Alezzza",
+    "_age": 20,
+    "_address": "Las Ñustas #340 segundo piso",
+    "_cel": "993298170",
+    "_debtCollector": true
+
+    "_DNI": "05824700",
+    "_name": "Sofia",
+    "_age": 20,
+    "_address": "Las Ñustas #340 primer piso",
+    "_cel": "993298177",
+    "_debtCollector": false

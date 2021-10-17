@@ -1,0 +1,24 @@
+### POST HEADQUARTER
+POST http://localhost:3000/headquarter/headquarter
+Content-Type: application/json
+
+{
+    "_address":"Arica #1018",
+    "_central":true,
+    "_stand":64,
+    "_flat":2
+}
+
+### GET HEADQUARTERS
+GET http://localhost:3000/headquarter/headquarter
+
+<<<<<   DATA TESTING   >>>>>
+    "_address":"Arica #1018",
+    "_central":true,
+    "_stand":63,
+    "_flat":2
+    
+    "_address":"Arica #1018",
+    "_central":true,
+    "_stand":64,
+    "_flat":2
