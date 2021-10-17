@@ -10,7 +10,7 @@ const app = express();
 const corsOptions = { origin: "http://localhost:4200" };
 
 //settings
-app.set("port", process.env.PORT || keys.PORT);
+app.set("port", keys.PORT);
 
 //middleware
 app.use(cors({}));
