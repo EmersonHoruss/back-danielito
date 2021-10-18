@@ -3,7 +3,8 @@ import worker from "./worker/route.index.js";
 import headquarter from "./headquarter/route.index.js";
 import saleOrder from "./saleOrder/route.index.js";
 import price from "./price/route.index.js";
-import all from "./route.all.js"
+import all from "./route.all.js";
+import auth from "./auth/auth.route.js";
 
 export default {
   product,
@@ -11,5 +12,6 @@ export default {
   headquarter,
   saleOrder,
   price,
-  all
+  all,
+  auth,
 };

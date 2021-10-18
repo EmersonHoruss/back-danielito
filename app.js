@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import routes from "./routes/route.index.js";
-import authRoutes  from './routes/auth/auth.route.js'
+import authRoutes from "./routes/auth/auth.route.js";
 import keys from "./keys.js";
 import { Router } from "express";
 const router = Router();
@@ -21,13 +21,14 @@ app.use(express.urlencoded({ extended: false }));
 //routes
 // app.use(router)
 // authRoutes(router);
+app.use("/auth", routes.auth);
 //ROUTER PRODUCT
 app.use("/product/brand", routes.product.brand);
 app.use("/product/category", routes.product.category);
 app.use("/product/product", routes.product.product);
 app.use("/product/size", routes.product.size);
 
-//ROUTER PRICE 
+//ROUTER PRICE
 app.use("/price/price", routes.price.price);
 app.use("/price/kindPrice", routes.price.kindPrice);
 
@@ -47,8 +48,5 @@ app.use("/saleOrder/detailSaleOrder", routes.saleOrder.detailSaleOrder);
 app.use("/saleOrder/saleOrder", routes.saleOrder.saleOrder);
 
 app.use("/all", routes.all);
-
-
-
 
 export default app;

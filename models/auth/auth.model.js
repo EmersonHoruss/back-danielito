@@ -1,12 +1,10 @@
 import mongoose from "mongoose";
-const Schema = mongoose.Schema;
-mongoose.set("useCreateIndex", true);
-const userSchema = new Schema(
+
+const _schema = new mongoose.Schema(
   {
     _nickname: {
       type: String,
       required: true,
-      trim: true,
       unique: true,
     },
     _password: {
@@ -28,7 +26,8 @@ const userSchema = new Schema(
   },
   {
     timestamps: true,
+    versionKey: false,
   }
 );
 
-export default userSchema;
+export default mongoose.model("User", _schema);

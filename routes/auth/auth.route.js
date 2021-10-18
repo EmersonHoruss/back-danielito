@@ -1,9 +1,21 @@
 // const Users = require("../../controllers/auth/auth.controller");
-import Users from "../../controllers/auth/auth.controller.js";
 
-const h = (router) => {
-  router.post("/register", Users.createUser);
-  router.post("/login", Users.loginUser);
-};
+// const h = (router) => {
+//   router.post("/register", Users.createUser);
+//   router.post("/login", Users.loginUser);
+// };
 
-export default h;
+// export default h;
+
+import { Router } from "express";
+import controllerUser from "../../controllers/auth/auth.controller.js";
+
+const router = Router();
+
+// Create
+router.post("/register", controllerUser.createUser);
+
+// Read all
+router.post("/login", controllerUser.loginUser);
+
+export default router;
