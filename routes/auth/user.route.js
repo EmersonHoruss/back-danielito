@@ -13,9 +13,9 @@ import controllerUser from "../../controllers/auth/auth.controller.js";
 const router = Router();
 
 // Create
-// router.post("/register", controllerUser.createUser);
+router.post("/register", controllerUser.createUser);
 
 // Read all
-router.post("/", controllerUser.loginUser);
+// router.post("/", controllerUser.loginUser);
 
 export default router;

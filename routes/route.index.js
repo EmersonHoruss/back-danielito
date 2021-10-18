@@ -5,6 +5,7 @@ import saleOrder from "./saleOrder/route.index.js";
 import price from "./price/route.index.js";
 import all from "./route.all.js";
 import auth from "./auth/auth.route.js";
+import user from "./auth/user.route.js";
 
 export default {
   product,
@@ -14,4 +15,5 @@ export default {
   price,
   all,
   auth,
+  user,
 };

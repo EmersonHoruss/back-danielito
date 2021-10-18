@@ -1,4 +1,4 @@
-// import User from "./auth.dao.js";
+// import Userr from "./auth.dao.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { _getNameById } from "./kindUser.function.js";
@@ -7,30 +7,33 @@ import User from "../../models/auth/auth.model.js";
 const SECRET_KEY = "secretkey123456";
 
 export default {
-  createUser: (req, res, next) => {
-    // const newUser = {
-    //   _nickname: req.body._nickname,
-    //   _password: bcrypt.hashSync(req.body._password),
-    //   _idWorker: req.body._idWorker,
-    //   _idKindUser: req.body._idKindUser,
-    // };
-    // User.create(newUser, (err, user) => {
-    //   if (err && err.code === 11000)
-    //     return res.status(409).send("_nickname already exists");
-    //   if (err) return res.status(500).send("Server error");
-    //   const expiresIn = 24 * 60 * 60;
-    //   const accessToken = jwt.sign({ id: user.id }, SECRET_KEY, {
-    //     expiresIn: expiresIn,
-    //   });
-    //   const dataUser = {
-    //     _nickname: user._nickname,
-    //     _kindUserName: "",
-    //     _accessToken: accessToken,
-    //     _expiresIn: expiresIn,
-    //   };
-    //   // response
-    //   res.send({ dataUser });
-    // });
+  createUser: async (req, res, next) => {
+    try {
+      const newUser = {
+        _nickname: req.body._nickname,
+        _password: bcrypt.hashSync(req.body._password),
+        _idWorker: req.body._idWorker,
+        _idKindUser: req.body._idKindUser,
+      };
+      User.save(newUser, (err, user) => {
+        const expiresIn = 24 * 60 * 60;
+        const accessToken = jwt.sign({ id: user.id }, SECRET_KEY, {
+          expiresIn: expiresIn,
+        });
+        const dataUser = {
+          _nickname: user._nickname,
+          _kindUserName: "",
+          _accessToken: accessToken,
+          _expiresIn: expiresIn,
+        };
+        // response
+        res.send({ dataUser });
+      });
+    } catch (err) {
+      if (err && err.code === 11000)
+        return res.status(409).send("_nickname already exists");
+      if (err) return res.status(500).send("Server error");
+    }
   },
 
   loginUser: async (req, res) => {
@@ -75,3 +78,21 @@ export default {
     });
   },
 };
+
+// Userr.create(newUser, (err, user) => {
+//   if (err && err.code === 11000)
+//     return res.status(409).send("_nickname already exists");
+//   if (err) return res.status(500).send("Server error");
+//   const expiresIn = 24 * 60 * 60;
+//   const accessToken = jwt.sign({ id: user.id }, SECRET_KEY, {
+//     expiresIn: expiresIn,
+//   });
+//   const dataUser = {
+//     _nickname: user._nickname,
+//     _kindUserName: "",
+//     _accessToken: accessToken,
+//     _expiresIn: expiresIn,
+//   };
+//   // response
+//   res.send({ dataUser });
+// });
