@@ -19,8 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //routes
-app.use(router)
-authRoutes(router);
+// app.use(router)
+// authRoutes(router);
 //ROUTER PRODUCT
 app.use("/product/brand", routes.product.brand);
 app.use("/product/category", routes.product.category);
