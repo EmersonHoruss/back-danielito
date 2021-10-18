@@ -7,31 +7,33 @@ import User from "../../models/auth/auth.model.js";
 const SECRET_KEY = "secretkey123456";
 
 export default {
-  createUser: async (req, res, next) => {
+  createUser: async (req, res) => {
     try {
-      const newUser = {
-        _nickname: req.body._nickname,
-        _password: bcrypt.hashSync(req.body._password),
-        _idWorker: req.body._idWorker,
-        _idKindUser: req.body._idKindUser,
-      };
-      User.save(newUser, (err, user) => {
-        const expiresIn = 24 * 60 * 60;
-        const accessToken = jwt.sign({ id: user.id }, SECRET_KEY, {
-          expiresIn: expiresIn,
-        });
-        const dataUser = {
-          _nickname: user._nickname,
-          _kindUserName: "",
-          _accessToken: accessToken,
-          _expiresIn: expiresIn,
-        };
-        // response
-        res.send({ dataUser });
-      });
+    const _user = {
+      _nickname: req.body._nickname,
+      _password: bcrypt.hashSync(req.body._password),
+      _idWorker: req.body._idWorker,
+      _idKindUser: req.body._idKindUser,
+    };
+    // res.send(_user);
+    const _newUser = new User(_user);
+    const _savedUser = await _newUser.save();
+    const expiresIn = 24 * 60 * 60;
+    const accessToken = jwt.sign({ id: _savedUser._id }, SECRET_KEY, {
+      expiresIn: expiresIn,
+    });
+
+    const dataUser = {
+      _nickname: _user._nickname,
+      _kindUserName: "",
+      _accessToken: accessToken,
+      _expiresIn: expiresIn,
+    };
+
+    res.send({ dataUser });
     } catch (err) {
       if (err && err.code === 11000)
-        return res.status(409).send("_nickname already exists");
+        return res.status(409).send("Nickname already exists");
       if (err) return res.status(500).send("Server error");
     }
   },
@@ -82,17 +84,16 @@ export default {
 // Userr.create(newUser, (err, user) => {
 //   if (err && err.code === 11000)
 //     return res.status(409).send("_nickname already exists");
-//   if (err) return res.status(500).send("Server error");
-//   const expiresIn = 24 * 60 * 60;
-//   const accessToken = jwt.sign({ id: user.id }, SECRET_KEY, {
-//     expiresIn: expiresIn,
-//   });
-//   const dataUser = {
-//     _nickname: user._nickname,
-//     _kindUserName: "",
-//     _accessToken: accessToken,
-//     _expiresIn: expiresIn,
-//   };
-//   // response
-//   res.send({ dataUser });
+// await if (err) retur res.status(500).send("r
+// const expiresIn = 24 * 60 * 60;
+// const accessToken = jwt.sign({ id: user.id }, SECRET_KEY, {
+//   expiresIn: expiresIn,
 // });
+// const dataUser = {
+//   _nickname: user._nickname,
+//   _kindUserName: "",
+//   _accessToken: accessToken,
+//   _expiresIn: expiresIn,
+// };
+
+// res.send({ dataUser });
