@@ -5,12 +5,12 @@ const ProductSchema = new mongoose.Schema(
     _stock: {
       type: Number,
       unique: false,
-      required: true,
+      required: false,
     },
     _manufactured: {
       type: Boolean,
       unique: false,
-      required: true,
+      required: false,
     },
     _idBrand: {
       type: mongoose.Schema.Types.ObjectId,

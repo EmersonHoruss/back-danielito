@@ -40,17 +40,22 @@ export default {
   },
 
   createWithNoId: async (req, res) => {
-    const { _stock, _category, _brand, _size, _manufactured, _price } =
-      req.body;
+    let { _stock, _category, _brand, _size, _manufactured, _price } = req.body;
+
+    _category = _category.toUpperCase();
+    _category = _category.toUpperCase();
+    _brand = _brand.toUpperCase();
+    _size = _size.toUpperCase();
     const _exist = await _fExistProduct(_category, _brand, _size);
+
     if (!_exist) {
       await _fCreateWithNoId(
-        _stock,
+        // _stock,
         _category,
         _brand,
-        _size,
-        _manufactured,
-        _price
+        _size
+        // _manufactured,
+        // _price
       );
       return res.status(200).json({
         _type: "success",
@@ -77,5 +82,17 @@ export default {
     const _products = await Product.find();
     const _fullItems = await _fGetFullProducts(_products);
     return res.status(200).json(_fullItems);
+  },
+
+  update: async (req, res) => {
+    const updatedLink = await Product.findByIdAndUpdate(
+      req.params._id,
+      req.body,
+      {
+        new: true,
+      }
+    );
+    res.status(200).json(updatedProduct)
+    // res.status(204).json(req.params.id); the 204 code means that the resquest have been succesfully but u cant send any content
   },
 };

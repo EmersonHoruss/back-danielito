@@ -15,12 +15,9 @@ POST http://localhost:3000/product/product/createWithNoId
 Content-Type: application/json
 
 {
-    "_stock":10,
-    "_manufactured":false,
     "_brand":"Otto",
     "_category":"Polo manga corta",
-    "_size":"AAAAA",
-    "_price": 10
+    "_size":"AAAAA"
 }
 
 ### GET PRODUCTS

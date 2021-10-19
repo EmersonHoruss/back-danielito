@@ -15,4 +15,6 @@ router.get("/", controllerProduct.red);
 // Read full
 router.get("/full", controllerProduct.redFull);
 
+// put
+router.put("/:_id", controllerProduct.update);
 export default router;

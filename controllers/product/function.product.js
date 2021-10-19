@@ -71,15 +71,15 @@ export const _fExistProduct = async (_categoryName, _brandName, _sizeName) => {
 };
 
 const _fSaveProduct = async (
-  _stock,
+  // _stock,
   _idCategory,
   _idBrand,
   _idSize,
-  _manufactured
+  // _manufactured
 ) => {
   const _new = new Product({
-    _stock,
-    _manufactured,
+    // _stock,
+    // _manufactured,
     _idBrand,
     _idCategory,
     _idSize,
@@ -158,25 +158,25 @@ const _fSavePrice = async (_price, _idProduct) => {
 };
 
 export const _fCreateWithNoId = async (
-  _stock,
+  // _stock,
   _categoryName,
   _brandName,
   _sizeName,
-  _manufactured,
-  _price
+  // _manufactured,
+  // _price
 ) => {
   const _idCategory = await _fGetIdCategory(_categoryName);
   const _idBrand = await _fGetIdBrand(_brandName);
   const _idSize = await _fGetIdSize(_sizeName);
   const _savedProduct = await _fSaveProduct(
-    _stock,
+    // _stock,
     _idCategory,
     _idBrand,
     _idSize,
-    _manufactured
+    // _manufactured
   );
   // console.log(_savedProduct)
-  await _fSavePrice(_price, _savedProduct._id);
+  // await _fSavePrice(_price, _savedProduct._id);
 };
 
 // BAD
