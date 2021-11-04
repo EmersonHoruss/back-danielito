@@ -1,0 +1,63 @@
+### POST USER IN HEADQUARTER owner
+POST http://localhost:3000/userHeadquarter(maria)
+Content-Type: application/json
+
+{
+    "_idUser":"618310c0ce2f4e4990a63bcc",
+    "_idHeadquarter":"6183117cce2f4e4990a63bd9"
+}
+
+### POST USER IN HEADQUARTER seller no box(liset)
+POST http://localhost:3000/userHeadquarter
+Content-Type: application/json
+
+{
+    "_idUser":"618310c5ce2f4e4990a63bce",
+    "_idHeadquarter":"6183117ece2f4e4990a63bdb"
+}
+
+### POST USER IN HEADQUARTER seller no box(leysi)
+POST http://localhost:3000/userHeadquarter
+Content-Type: application/json
+
+{
+    "_idUser":"61833123780caf39149b80fe",
+    "_idHeadquarter":"61831181ce2f4e4990a63bdd"
+}
+
+### POST USER IN HEADQUARTER
+POST http://localhost:3000/userHeadquarter
+Content-Type: application/json
+
+{
+    "_idUser":"618310c6ce2f4e4990a63bd0",
+    "_idHeadquarter":"61831184ce2f4e4990a63bdf"
+}
+
+
+### GET USERS IN HEADQUARTER
+GET http://localhost:3000/userHeadquarter
+
+
+
+
+
+
+
+### POST USER IN HEADQUARTER sol
+POST http://localhost:3000/userHeadquarter
+Content-Type: application/json
+
+{
+    "_idUser":"61833aee780caf39149b83ee",
+    "_idHeadquarter":"6183117cce2f4e4990a63bd9"
+}
+
+### POST USER IN HEADQUARTER luna
+POST http://localhost:3000/userHeadquarter
+Content-Type: application/json
+
+{
+    "_idUser":"618339d5780caf39149b8393",
+    "_idHeadquarter":"6183117ece2f4e4990a63bdb"
+}

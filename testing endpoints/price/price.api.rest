@@ -3,9 +3,47 @@ POST http://localhost:3000/price/price
 Content-Type: application/json
 
 {
-    "_amount" : 16,
-    "_idKindPrice":"614e01dcc34eda1f44272aec",
-    "_idProduct":"614e06e3c34eda1f44272b21"
+    "_amount" : 17.00,
+    "_idKindPrice":"617ef5964ce8a3345cdc6709",
+    "_idProduct":"618148527e5d783da013a297"
+}
+
+### POST PRICE
+POST http://localhost:3000/price/price
+Content-Type: application/json
+
+{
+    "_amount" : 17.00,
+    "_idKindPrice":"617ef5964ce8a3345cdc6709",
+    "_idProduct":"618148547e5d783da013a29a"
+}
+
+### POST PRICE
+POST http://localhost:3000/price/price
+Content-Type: application/json
+
+{
+    "_amount" : 15.00,
+    "_idKindPrice":"617ef5964ce8a3345cdc6709",
+    "_idProduct":"61803f573bb49333807ba04c"
+}
+
+### POST MULTIPLE PRICE
+POST http://localhost:3000/price/price/multiple
+Content-Type: application/json
+
+{
+    "_productIds": ["x","y"],
+    "_prices":[
+        {
+             "_id":"a",
+            "_amount":0
+        },
+        {
+            "_id":"b",
+            "_amount":0
+        }
+    ]
 }
 
 ### PUT PRICE BY ID PRODUCT AND ID KIND PRICE
@@ -19,12 +57,13 @@ Content-Type: application/json
 
 ### GET FULL PRICES BY _IDPRODUCT
 ### http://localhost:3000/price/price/readFullPricesByIdProduct/:_idProduct
-GET http://localhost:3000/price/price/readFullPricesByIdProduct/61274514be557958acee78a2
+GET http://localhost:3000/price/price/readFullPricesByIdProduct/6170b9f50bede11c4cd302b1
 
 ### GET PRICE
 GET http://localhost:3000/price/price
 
-
+### GET FULL PRICE
+GET http://localhost:3000/price/price/full
 
 <<<<<   DATA TESTING   >>>>>
     <   KindPrice = menor  >

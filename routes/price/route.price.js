@@ -6,6 +6,9 @@ const router = Router();
 // Create
 router.post("/", controllerPrice.create);
 
+// Create multiple
+router.post("/multiple", controllerPrice._createMultiple);
+
 // Create
 router.put("/updateById/:_idPrice", controllerPrice.update);
 
@@ -17,5 +20,8 @@ router.get(
 
 // Read all
 router.get("/", controllerPrice.red);
+
+// Read all full
+router.get("/full", controllerPrice._readFull);
 
 export default router;

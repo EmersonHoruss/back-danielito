@@ -1,6 +1,17 @@
 import Price from "../../models/price/model.price.js";
 import { _fGetFullPrices } from "./function.price.js";
 
+const _create = async (_amount, _idKindPrice, _idProduct) => {
+  const newPrice = new Price({
+    _amount,
+    _idKindPrice,
+    _idProduct,
+  });
+  // console.log(_amount, _idKindPrice, _idProduct);
+  const _savedPrice = await newPrice.save();
+  return _savedPrice;
+};
+
 export default {
   create: async (req, res) => {
     try {
@@ -18,6 +29,29 @@ export default {
       console.log(error);
       return res.status(500).json(error);
     }
+  },
+
+  _createMultiple: async (req, res) => {
+    const { _productIds, _prices } = req.body;
+    const _dataResponse = [];
+    console.log(_productIds, _prices);
+    for (const _iPI in _productIds)
+      for (const _iP in _prices) {
+        const { _id, _amount } = _prices[_iP];
+        const _result = await _create(
+          parseFloat(_amount),
+          _id,
+          _productIds[_iPI]
+        );
+        _dataResponse.push(_result);
+        console.log(typeof _amount);
+        // console.log(parseFloat(_amount), _id, _productIds[_iPI]);
+      }
+    res.send(_dataResponse);
+
+    // console.log(_productIds, _prices);
+    // console.log('creating multiple')
+    // console.log('xx')
   },
 
   update: async (req, res) => {
@@ -43,5 +77,12 @@ export default {
   red: async (req, res) => {
     const _prices = await Price.find();
     return res.json(_prices);
+  },
+
+  _readFull: async (req, res) => {
+    const _prices = await Price.find();
+    const _fullPrices = await _fGetFullPrices(_prices);
+
+    return res.json(_fullPrices);
   },
 };

@@ -4,8 +4,28 @@ Content-Type: application/json
 
 {
     "_stock":10,
-    "_idHeadquarter":"614e0bc7c34eda1f44272b3a",
-    "_idProduct":"614e30353b93673c24076d64"
+    "_idHeadquarter":"617e1d7ff506d11838209938",
+    "_idProduct":"618058c23bb49333807bbb8c"
+}
+
+### POST MULTIPLE PRODUCT HEADQUARTER (min stock should be equal or more than total)
+POST http://localhost:3000/headquarter/productHeadquarter/multiple
+Content-Type: application/json
+
+{
+    "_productIds": ["x","y"],
+    "_productStocks":[3,2],
+    "_total":2,
+    "_headquarters":[
+        {
+            "_idHeadquarter":"a",
+            "_stock":0
+        },
+        {
+            "_idHeadquarter":"b",
+            "_stock":0
+        }
+    ]
 }
 
 ### PUT PRODUCT_HEADQUARTER BY ID PRODUCT HEADQUARTER
@@ -24,7 +44,7 @@ GET http://localhost:3000/headquarter/productHeadquarter/readByBrandCategorySize
 GET http://localhost:3000/headquarter/productHeadquarter
 
 ### GET FULL PRODUCTS HEADQUARTER
-GET http://localhost:3000/headquarter/productHeadquarter/full/6129c85483df9e42f027015a
+GET http://localhost:3000/headquarter/productHeadquarter/full/617e1d7ff506d11838209938
 
 
 <<<<<   DATA TESTING   >>>>>

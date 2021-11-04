@@ -1,5 +1,6 @@
 import DetailSO from "../../models/saleOrder/model.detailSaleOrder.js";
 import ProductH from "../../models/headquarter/model.productHeadquarter.js";
+import _FProductH from "../headquarter/function.productHeadquarter.js";
 
 import {
   _fGetFullProductH,
@@ -62,3 +63,43 @@ export const _fDeleteManyByIdSO = async (_idSaleOrder) => {
   const _manyDetailSO = await DetailSO.find({ _idSaleOrder });
   for (const _detailSO of _manyDetailSO) await _fDeleteOneByDSO(_detailSO);
 };
+
+const _fIsUpdatable = () => {};
+
+const _fCreate = async (
+  _price,
+  _amount,
+  _idProductHeadquarter,
+  _idSaleOrder
+) => {
+  let _msje = await _FProductH._fUpdate(0, _amount, _idProductHeadquarter);
+  if (typeof _msje !== typeof "") {
+    const newDetailSaleOrder = new DetailSO({
+      _price,
+      _amount,
+      _idProductHeadquarter,
+      _idSaleOrder,
+    });
+
+    _msje = await newDetailSaleOrder.save();
+    return _msje;
+  }
+};
+
+const _fUpdate = async (_idDetailSaleOrder, _amount, _idProductHeadquarter) => {
+  const _id = _idDetailSaleOrder,
+    _idProductH = _idProductHeadquarter;
+  const _detailSO = await DetailSO.find({ _id });
+  const _lastAmount = _detailSO._amount;
+
+  const _msje = await _FProductH._fUpdate(_lastAmount, _amount, _idProductH);
+  return _msje;
+};
+
+export const _createBetter = async (
+  _price,
+  _amount,
+  _idSaleOrder,
+  _idDetailSaleOrder,
+  _idProductHeadquarter
+) => {};

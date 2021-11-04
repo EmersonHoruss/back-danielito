@@ -6,7 +6,43 @@ Content-Type: application/json
     "_address":"Arica #1018",
     "_central":true,
     "_stand":64,
+    "_flat":2,
+    "_idBox":"61831114ce2f4e4990a63bd2"
+}
+
+### POST HEADQUARTER
+POST http://localhost:3000/headquarter/headquarter
+Content-Type: application/json
+
+{
+    "_address":"Arica #1018",
+    "_central":true,
+    "_stand":65,
+    "_flat":2,
+    "_idBox":"61831116ce2f4e4990a63bd4"
+}
+
+### POST HEADQUARTER
+POST http://localhost:3000/headquarter/headquarter
+Content-Type: application/json
+
+{
+    "_address":"Arica #1018",
+    "_central":true,
+    "_stand":83,
     "_flat":2
+}
+
+### POST HEADQUARTER
+POST http://localhost:3000/headquarter/headquarter
+Content-Type: application/json
+
+{
+    "_address":"Balta #200",
+    "_central":true,
+    "_stand":25,
+    "_flat":1,
+    "_idBox":"6183112cce2f4e4990a63bd6"
 }
 
 ### GET HEADQUARTERS
@@ -17,8 +53,10 @@ GET http://localhost:3000/headquarter/headquarter
     "_central":true,
     "_stand":63,
     "_flat":2
+    "_idBox":""
     
     "_address":"Arica #1018",
     "_central":true,
     "_stand":64,
     "_flat":2
+    "_idBox":""

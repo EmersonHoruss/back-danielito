@@ -10,11 +10,13 @@ const _schema = new mongoose.Schema(
     _password: {
       type: String,
       required: true,
+      unique: false,
     },
+    // id worker should be true in unique
     _idWorker: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Worker",
-      unique: true,
+      unique: false,
       required: false,
     },
     _idKindUser: {

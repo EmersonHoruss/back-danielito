@@ -3,9 +3,39 @@ POST http://localhost:3000/price/kindPrice
 Content-Type: application/json
 
 {
-    "_name": "compra",
+    "_name": "Compra",
     "_beginningAmount": 0,
     "_lastAmount": 0
+}
+
+### POST KIND_PRICE
+POST http://localhost:3000/price/kindPrice
+Content-Type: application/json
+
+{
+    "_name": "Menor",
+    "_beginningAmount": 1,
+    "_lastAmount": 2
+}
+
+### POST KIND_PRICE
+POST http://localhost:3000/price/kindPrice
+Content-Type: application/json
+
+{
+    "_name": "Mayor",
+    "_beginningAmount": 3,
+    "_lastAmount": 6
+}
+
+### POST KIND_PRICE
+POST http://localhost:3000/price/kindPrice
+Content-Type: application/json
+
+{
+    "_name": "SuperMayor",
+    "_beginningAmount": 7,
+    "_lastAmount": 999
 }
 
 ### GET KIND_PRICE

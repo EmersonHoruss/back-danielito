@@ -3,7 +3,7 @@ POST http://localhost:3000/product/category
 Content-Type: application/json
 
 {
-    "_name": "Buso"
+    "_name": "POLO MANGA LARGA"
 }
 
 ### GET CATEGORIES BY HEADQUARTER

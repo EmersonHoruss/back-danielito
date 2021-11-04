@@ -1,0 +1,75 @@
+### POST USER
+POST http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+    "_nickname":"Maria",
+    "_password":"maria123",
+    "_idKindUser":"61831039ce2f4e4990a63bc5"
+}
+
+### POST USER
+POST http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+    "_nickname":"Liset",
+    "_password":"liset123",
+    "_idKindUser":"6183103bce2f4e4990a63bc7"
+}
+
+### POST USER
+POST http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+    "_nickname":"Leysi",
+    "_password":"leysi123",
+    "_idKindUser":"6183103bce2f4e4990a63bc7"
+}
+
+### POST USER
+POST http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+    "_nickname":"Michel",
+    "_password":"michel123",
+    "_idKindUser":"6183103cce2f4e4990a63bc9"
+}
+
+###
+<<<<<   DATA TESTING   >>>>>
+    "_address":"Arica #1018",
+    "_central":true,
+    "_stand":63,
+    "_flat":2
+    
+    "_address":"Arica #1018",
+    "_central":true,
+    "_stand":64,
+    "_flat":2
+
+
+
+
+
+### POST USER
+POST http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+    "_nickname":"Solsi",
+    "_password":"solsi123",
+    "_idKindUser":"6183103bce2f4e4990a63bc7"
+}
+
+### POST USER
+POST http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+    "_nickname":"Luni",
+    "_password":"luni123",
+    "_idKindUser":"6183103bce2f4e4990a63bc7"
+}

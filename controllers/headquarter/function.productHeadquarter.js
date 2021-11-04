@@ -69,7 +69,7 @@ export const _fGetFullProductH = async (_productH) => {
   // console.log(_product);
   _fullProductH._product = await _fGetFullProduct(_product);
   delete _fullProductH._idProduct;
-  _fullProductH._prices = await _fGetAllKindPrices()
+  _fullProductH._kindPrices = await _fGetAllKindPrices()
   return _fullProductH;
 };
 

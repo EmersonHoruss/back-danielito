@@ -6,6 +6,8 @@ import price from "./price/route.index.js";
 import all from "./route.all.js";
 import auth from "./auth/auth.route.js";
 import user from "./auth/user.route.js";
+import kindUser from "./auth/kindUser.route.js";
+import userHeadquarter from "./auth/userHeadquarter.route.js"
 
 export default {
   product,
@@ -16,4 +18,6 @@ export default {
   all,
   auth,
   user,
+  kindUser,
+  userHeadquarter
 };

@@ -6,6 +6,9 @@ const router = Router();
 // Create
 router.post("/", controllerProductHeadquarter.create);
 
+// Create multiple
+router.post("/multiple", controllerProductHeadquarter._createMultiple);
+
 // Update
 router.put(
   "/updateById/:_idProductH",

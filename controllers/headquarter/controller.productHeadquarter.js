@@ -1,4 +1,5 @@
 import ProductH from "../../models/headquarter/model.productHeadquarter.js";
+import Product from "../../models/product/model.product.js";
 import Validation from "../../library/validations.js";
 import { _fGetFullProductHs } from "./function.productHeadquarter.js";
 
@@ -21,7 +22,6 @@ const _fFilterByBrand = (_fullProductHs, _idBrand) => {
     (_fullProductH) => _fullProductH._product._brand._id === _idBrand
   );
   // console.log("RESULT BRAND", h);
-  
 };
 
 const _fFilterByCategory = (_fullProductHs, _idCategory) => {
@@ -47,7 +47,7 @@ const _fGetReadedByBrandCategorySize = (
     _isIdCategoryNull = _fStringNull(_idCategory),
     _isIdSizeNull = _fStringNull(_idSize);
 
-    // console.log(_result[0]._product)
+  // console.log(_result[0]._product)
   if (_fullProductHs.length === 0) return [];
   if (_isIdBrandNull && _isIdCategoryNull && _isIdSizeNull) return [];
   if (!_isIdBrandNull) _result = _fFilterByBrand(_result, _idBrand);
@@ -57,6 +57,47 @@ const _fGetReadedByBrandCategorySize = (
   // console.log('RESULT BRAND GETTING', _result)
   // _result = _fFilterByCategory(_result, _idCategory);
   // _result = _fFilterBySize(_result, _idSize);
+  return _result;
+};
+
+const _create = async (_stock, _idHeadquarter, _idProduct) => {
+  const _new = new ProductH({
+    _stock,
+    _idHeadquarter,
+    _idProduct,
+  });
+  // console.log(_stock, _idHeadquarter, _idProduct);
+  const _saved = await _new.save();
+  return _saved;
+};
+
+const _update = async (_stock, _id) => {
+  return await ProductH.findByIdAndUpdate(
+    _id,
+    {
+      $set: { _stock },
+    },
+    {
+      new: true,
+    }
+  );
+};
+
+const _mngAssignation = async (_stock, _idHeadquarter, _idProduct) => {
+  // check if exists
+  // if exists update
+  // else create
+  let _result = {};
+  const _exist = await ProductH.find({ _idHeadquarter, _idProduct });
+
+  if (_exist.length === 0) {
+    _result = await _create(_stock, _idHeadquarter, _idProduct);
+  } else {
+    const _stockToUpdate = _exist[0]._stock + _stock;
+    const _idPH = _exist[0]._id;
+    _result = await _update(_stockToUpdate, _idPH);
+  }
+
   return _result;
 };
 
@@ -82,6 +123,44 @@ export default {
       console.log(error);
       return res.status(500).json(error);
     }
+  },
+
+  _createMultiple: async (req, res) => {
+    const { _productIds, _headquarters, _productStocks, _total } = req.body;
+    const _dataResponse = [];
+    // console.log(_productIds, _productStocks, _headquarters, _total);
+
+    // update product stock
+    for (const _iPI in _productIds) {
+      const _stock = _productStocks[_iPI] - _total;
+      const _id = _productIds[_iPI];
+
+      await Product.findByIdAndUpdate(
+        _id,
+        {
+          $set: { _stock },
+        },
+        {
+          new: true,
+        }
+      );
+    }
+
+    // register the assignation
+    for (const _iPI in _productIds)
+      for (const _iP in _headquarters) {
+        const { _idHeadquarter, _stock } = _headquarters[_iP];
+
+        const _result = await _mngAssignation(
+          parseInt(_stock),
+          _idHeadquarter,
+          _productIds[_iPI]
+        );
+
+        _dataResponse.push(_result);
+        // console.log(parseFloat(_amount), _idHeadquarter, _productIds[_iPI]);
+      }
+    res.send(_dataResponse);
   },
 
   readByBrandCategorySize: async (req, res) => {

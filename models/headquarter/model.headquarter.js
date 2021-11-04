@@ -22,6 +22,12 @@ const HeadquarterSchema = new mongoose.Schema(
       unique: false,
       required: true,
     },
+    _idBox: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Box",
+      unique: false,
+      required: false,
+    },
   },
   {
     timestamps: true,

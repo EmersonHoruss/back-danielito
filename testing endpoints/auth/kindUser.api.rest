@@ -1,0 +1,41 @@
+### POST KIND USER
+POST http://localhost:3000/kindUser
+Content-Type: application/json
+
+{
+    "_name":"owner",
+    "_description":""
+}
+
+### POST KIND USER
+POST http://localhost:3000/kindUser
+Content-Type: application/json
+
+{
+    "_name":"seller",
+    "_description":""
+}
+
+### POST KIND USER
+POST http://localhost:3000/kindUser
+Content-Type: application/json
+
+{
+    "_name":"debt-collector",
+    "_description":""
+}
+
+### GET KIND USERS
+GET http://localhost:3000/kindUser
+
+###
+<<<<<   DATA TESTING   >>>>>
+    "_address":"Arica #1018",
+    "_central":true,
+    "_stand":63,
+    "_flat":2
+    
+    "_address":"Arica #1018",
+    "_central":true,
+    "_stand":64,
+    "_flat":2

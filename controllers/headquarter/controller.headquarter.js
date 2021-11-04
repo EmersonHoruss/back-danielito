@@ -1,14 +1,15 @@
- import Headquarter from "../../models/headquarter/model.headquarter.js";
+import Headquarter from "../../models/headquarter/model.headquarter.js";
 
 export default {
   create: async (req, res) => {
     try {
-      const { _address, _central, _stand, _flat } = req.body;
+      const { _address, _central, _stand, _flat, _idBox } = req.body;
       const newHeadquarter = new Headquarter({
         _address,
         _central,
         _stand,
         _flat,
+        _idBox,
       });
 
       const savedHeadquarter = await newHeadquarter.save();

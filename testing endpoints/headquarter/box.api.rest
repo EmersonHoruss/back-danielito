@@ -1,0 +1,52 @@
+### POST BOX
+POST http://localhost:3000/headquarter/box
+Content-Type: application/json
+
+{
+    "_name":"0",
+    "_beginningAmount":0,
+    "_endAmount":0,
+    "_hourStartTime":9,
+    "_minuteStartTime":0,
+    "_secondStartTime":0,
+    "_hourEndTime":8,
+    "_minuteEndTime":0,
+    "_secondEndTime":0
+}
+
+### POST BOX
+POST http://localhost:3000/headquarter/box
+Content-Type: application/json
+
+{
+    "_name":"0",
+    "_beginningAmount":0,
+    "_endAmount":0,
+    "_hourStartTime":9,
+    "_minuteStartTime":0,
+    "_secondStartTime":0,
+    "_hourEndTime":8,
+    "_minuteEndTime":0,
+    "_secondEndTime":0
+}
+
+### POST BOX
+POST http://localhost:3000/headquarter/box
+Content-Type: application/json
+
+{
+    "_name":"0",
+    "_beginningAmount":0,
+    "_endAmount":0,
+    "_hourStartTime":10,
+    "_minuteStartTime":0,
+    "_secondStartTime":0,
+    "_hourEndTime":7,
+    "_minuteEndTime":0,
+    "_secondEndTime":0
+}
+
+### GET BOXES
+GET http://localhost:3000/headquarter/box
+
+<<<<<   DATA TESTING   >>>>>

@@ -7,7 +7,13 @@ const router = Router();
 router.post("/", detailSaleOrder.create);
 
 // Create
+router.post("/plusAmount", detailSaleOrder.createPlusAmount);
+
+// Update
 router.put("/", detailSaleOrder.update);
+
+// Update plus
+router.put("/plusAmount", detailSaleOrder.updatePlusAmount);
 
 // Read all
 router.get("/", detailSaleOrder.red);
@@ -25,5 +31,7 @@ router.get(
 );
 
 router.delete("/deleteOneById/:_idDetailSO", detailSaleOrder.deleteOneById);
+
+router.post("/createOrUpdate", detailSaleOrder._createOrUpdate);
 
 export default router;

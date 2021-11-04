@@ -9,6 +9,9 @@ router.post("/", controllerProduct.create);
 // Create
 router.post("/createWithNoId", controllerProduct.createWithNoId);
 
+// Create
+router.post("/multiple", controllerProduct._createMultiple);
+
 // Read all
 router.get("/", controllerProduct.red);
 

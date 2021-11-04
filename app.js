@@ -26,6 +26,13 @@ app.use("/login", routes.auth);
 //user
 app.use("/user", routes.user);
 // app.use("/auth/register", routes.auth);
+
+//kindUser
+app.use("/kindUser", routes.kindUser);
+
+//kindUser
+app.use("/userHeadquarter", routes.userHeadquarter);
+
 //ROUTER PRODUCT
 app.use("/product/brand", routes.product.brand);
 app.use("/product/category", routes.product.category);
@@ -45,6 +52,7 @@ app.use(
   "/headquarter/productHeadquarter",
   routes.headquarter.productHeadquarter
 );
+app.use("/headquarter/box", routes.headquarter.box);
 
 //ROUTER SALE_ORDER
 app.use("/saleOrder/client", routes.saleOrder.client);

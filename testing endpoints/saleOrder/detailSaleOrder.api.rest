@@ -1,24 +1,51 @@
-### POST DETAIL SALE ORDER
+### POST DETAIL SALE ORDER(DONT WORK)
 POST http://localhost:3000/saleOrder/detailSaleOrder
 Content-Type: application/json
 
 {
-    "_price": 17,
+    "_price": 20,
     "_amount": 1,
-    "_idProductHeadquarter": "6129bd093f46203ca4b1422c",
-    "_idSaleOrder": "61252606ca64d0458cec3577"
+    "_idProductHeadquarter": "6170ba320bede11c4cd302b7",
+    "_idSaleOrder": "61719dddbb4412315450813c"
 }
 
-### 6129c85483df9e42f027015a
+### POST PLUS AMOUNT DETAIL SALE ORDER
+POST http://localhost:3000/saleOrder/detailSaleOrder/plusAmount
+Content-Type: application/json
+
+{
+    "_amount": 30,
+    "_idProductHeadquarter": "6174df078d450a354080ff55",
+    "_idSaleOrder": "617705fadfb04c1434011341"
+}
+
+### PUT PLUS AMOUNT DETAIL SALE ORDER BETTER
+PUT http://localhost:3000/saleOrder/detailSaleOrder/plusAmount
+Content-Type: application/json
+
+{
+    "_amount": 1,
+    "_idProductHeadquarter": "6174df078d450a354080ff55",
+    "_idSaleOrder": "617705fadfb04c1434011341"
+}
+
+### POST (GET THE DETAILSO)
+POST http://localhost:3000/saleOrder/detailSaleOrder/createOrUpdate
+Content-Type: application/json
+
+{
+    "_idProductHeadquarter": "6170ba320bede11c4cd302b7",
+    "_idSaleOrder": "6171d01a3e3e7a478c320bc4"
+}
 
 
 ### GET DETAILS SALE ORDER BY ID SALE ORDER
-GET http://localhost:3000/saleOrder/detailSaleOrder/readByIdSaleOrder/614ae57e6bcbde352cf73ca1
+GET http://localhost:3000/saleOrder/detailSaleOrder/readByIdSaleOrder/6174d9578d450a354080ff27
 
 ###GET http://localhost:3000/saleOrder/detailSaleOrder/readByIdSaleOrder/6147ba2c1fe81f3648b7edad
 
 ### GET FULL DETAILS SALE ORDER BY ID SALE ORDER (FULL JUST IN THE PRODUCTS BY HEADQUARTER)
-GET http://localhost:3000/saleOrder/detailSaleOrder/readFullByIdSaleOrder/614ae57e6bcbde352cf73ca1
+GET http://localhost:3000/saleOrder/detailSaleOrder/readFullByIdSaleOrder/6174d9578d450a354080ff27
 
 
 ### GET ALL DETAILS SALE ORDER

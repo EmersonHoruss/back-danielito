@@ -14,9 +14,36 @@ const SaleOrderSchema = new mongoose.Schema(
       unique: false,
       required: false,
     },
+    _dateSeller: {
+      type: Date,
+      unique: false,
+      require: false,
+    },
     _idDebtCollector: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Worker",
+      unique: false,
+      required: false,
+    },
+    _dateCollect: {
+      type: Date,
+      unique: false,
+      required: false,
+    },
+    _idDeliver: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Worker",
+      unique: false,
+      required: false,
+    },
+    _dateDeliver: {
+      type: Date,
+      unique: false,
+      required: false,
+    },
+    _idHeadquarter: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Headquarter",
       unique: false,
       required: false,
     },

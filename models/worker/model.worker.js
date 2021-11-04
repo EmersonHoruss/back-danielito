@@ -32,7 +32,6 @@ const WorkerSchema = new mongoose.Schema(
       unique: false,
       required: true,
     },
-    
   },
   {
     timestamps: true,

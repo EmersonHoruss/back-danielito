@@ -1,0 +1,52 @@
+### POST AUTH
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "_nickname": "Maria",
+    "_password": "maria123"
+}
+
+### POST AUTH
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "_nickname": "Liset",
+    "_password": "liset123"
+}
+
+### POST AUTH
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "_nickname": "Leysi",
+    "_password": "leysi123"
+}
+
+### POST AUTH
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "_nickname": "Michel",
+    "_password": "michel123"
+}
+
+
+
+###
+<<<<<   DATA TESTING   >>>>>
+    "_nickname": "Jose de Odo",
+    "_password": "josesito123"
+
+
+### POST AUTH
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "_nickname": "Luni",
+    "_password": "luni123"
+}

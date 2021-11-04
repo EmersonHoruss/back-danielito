@@ -3,11 +3,23 @@ POST http://localhost:3000/product/product
 Content-Type: application/json
 
 {
-    "_stock":12,
+    "_stock":0,
     "_manufactured":false,
-    "_idBrand":"614e021ec34eda1f44272aee",
-    "_idCategory":"614e02a7c34eda1f44272afa",
-    "_idSize":"614e0337c34eda1f44272b04"
+    "_idBrand":"6182d79f219a1808383a3f23",
+    "_idCategory":"6182d79f219a1808383a3f20",
+    "_idSize":"617ef3214ce8a3345cdc66fc"
+}
+
+### POST PRODUCT
+POST http://localhost:3000/product/product
+Content-Type: application/json
+
+{
+    "_stock":100,
+    "_manufactured":false,
+    "_idBrand":"618058bd3bb49333807bbb1d",
+    "_idCategory":"618058bd3bb49333807bbb1a",
+    "_idSize":"617ef3214ce8a3345cdc66fc"
 }
 
 ### POST PRODUCT WITH NO ID
@@ -20,6 +32,17 @@ Content-Type: application/json
     "_size":"AAAAA"
 }
 
+### POST MULTIPLE PRODUCT 
+POST http://localhost:3000/product/product/multiple
+Content-Type: application/json
+
+{
+    "_productIds": ["x","y"],
+    "_productStocks":[3,2],
+    "_stock":3,
+    "_amount":4.5
+}
+
 ### GET PRODUCTS
 GET http://localhost:3000/product/product
 
@@ -28,6 +51,19 @@ GET http://localhost:3000/product/product/full/
 
 ### GET FULL PRODUCTS 
 GET http://localhost:3000/product/product/full
+
+
+
+### PUT PRODUCT
+PUT http://localhost:3000/product/product/616e434492b3de2bac19d0e7
+Content-Type: application/json
+
+{
+    "_idBrand": "617ef3044ce8a3345cdc66e7",
+    "_idCategory": "617ef3044ce8a3345cdc66e4",
+    "_idSize": "617ef3044ce8a3345cdc66ea",
+    "_stock":20
+}
 
 <<<<<   DATA TESTING   >>>>> 
     "_stock":6,
